@@ -1,2 +1,2 @@
 # UrbanFork
-An app to keep restaurant recommendations for easy share-ability to fellow foodies
+An app to share restaurant recomendations to fellow foodies.
