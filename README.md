@@ -6,17 +6,15 @@ An app to share restaurant recomendations to fellow foodies.
 
 ### User Story
 On the log in screen:
-- As a user (AAU), I want to log in using my gmail account to make changes or click just browse.
+- As a user (AAU), I want to log in using my gmail account to browse or make changes.
 
 On the main page:
 - AAU, I want to click add to add new restaurants.
-- AAU, I want to click on a certain city to browse restaurants in that city.
-- AAU, I want to view all recommended restaurants in that city.
+- AAU, I want to click on a certain user to browse their list of recommended restaurants.
 - AAU, I want to view details of selected restaurant.
 
 On the details page:
-- AAU, I want to edit or delete restaurant by clicking respective buttons.
-
+- AAU, I want to click edit or delete to update or delete a restaurant on my list.  
 
 
 ### User Flow
