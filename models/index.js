@@ -14,5 +14,5 @@ mongoose
 	.catch((err) => console.log(`MongoDB connection FAILED: ${err}`));
 
 module.exports = {
-	User: require("./User"),
+	Profile: require("./Profile"),
 };

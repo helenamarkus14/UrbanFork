@@ -19,7 +19,7 @@ const restaurantSchema = new mongoose.Schema(
 
 
 
-const userSchema = new mongoose.Schema(
+const profileSchema = new mongoose.Schema(
     {
         name: String,
         email: String,
@@ -33,4 +33,4 @@ const userSchema = new mongoose.Schema(
 );
 
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model('Profile', profileSchema);
