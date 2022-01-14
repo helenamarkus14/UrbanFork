@@ -9,3 +9,13 @@ const idx = (req,res) => {
         return res.render('profiles/index', context);
     });
 };
+
+
+const show = (req, res) => {
+    db.Profile.findById(req.params.id, function (err, profile) {
+        if (err) return res.send(err);
+        const context = {profile: profile};
+        return res.render("profiles/show", context);
+    });
+
+};
