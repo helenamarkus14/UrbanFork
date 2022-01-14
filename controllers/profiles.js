@@ -19,3 +19,8 @@ const show = (req, res) => {
     });
 
 };
+
+module.exports = {
+    idx,
+    show,
+}
