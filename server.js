@@ -13,7 +13,7 @@ const routes = require("./routes");
 const app = express();
 
 /* ====  Configuration  ==== */
-const PORT = 4000;
+const PORT = 5000;
 app.set("view engine", "ejs");
 
 
@@ -42,6 +42,9 @@ app.get((req, res) => {
 });
 
 //Internal Routes
+
+app.use("/profiles", routes.profiles);
+
 
 
 
