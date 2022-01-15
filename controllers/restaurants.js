@@ -1,3 +1,4 @@
+const { restaurants } = require(".");
 const db = require("../models");
 
 
@@ -40,22 +41,17 @@ const edit = (req, res) => {
     });
 };
 
+
 const update = (req, res) => {
-    db.Profile.findOneAndUpdate(
-        {"restaurants._id":req.params.id}, 
-        {$set: {restaurants: req.body,},
-    },
-    {new:true},
-    (err, profile) => {
-        if (err) return res.send(err);
+    db.Profile.findOne({"restaurants._id":req.params.id}, function (err, profile) {
+        const restDoc = profile.restaurants.id(req.params.id); 
+        restDoc.set(req.body);
         profile.save(function(err){
             if(err) return res.send(err);
-            res.redirect(`/profiles/${profile._id}`)
-    });
+            return res.redirect(`/profiles/${profile._id}`);
+        });
     });
 };
-
-
 
 
 const destroy = (req, res) => {
