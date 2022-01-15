@@ -41,10 +41,10 @@ const edit = (req, res) => {
 };
 
 const update = (req, res) => {
-    db.Profile.findOne({"restaurants._id":req.params.id}, 
+    db.Profile.findOneAndUpdate({"restaurants._id":req.params.id}, 
     {
         $set: {
-            ...req.body,
+            restaurants: req.body,
         },
     },
     {new:true},
