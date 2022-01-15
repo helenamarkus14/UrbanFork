@@ -45,7 +45,7 @@ app.get((req, res) => {
 //Internal Routes
 
 app.use("/profiles", routes.profiles);
-
+app.use("/", routes.restaurants);
 
 
 
