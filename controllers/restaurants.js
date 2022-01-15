@@ -3,10 +3,9 @@ const db = require("../models");
 
 const show = (req, res) => {
     db.Profile.findOne({"restaurants._id":req.params.id}, function (err, profile) {
-        console.log(req.params.id)
         if (err) return res.send(err);
         const restpos = profile.restaurants.id(req.params.id)
-        const context = {restaurants: restpos};
+        const context = {restaurants: restpos, profile:profile};
         return res.render("restaurants/show", context);
     });
 
@@ -31,16 +30,17 @@ const create = (req, res) => {
       });
     };
 
-    const edit = (req, res) => {
-        db.Profile.findOne({"restaurants._id":req.params.id}, function (err, profile) {
-            console.log(req.params.id)
-            if (err) return res.send(err);
-            const restpos = profile.restaurants.id(req.params.id)
-            const context = {restaurants: restpos};
-            return res.render("restaurants/edit", context);
-        });
-    
-    };
+const edit = (req, res) => {
+    db.Profile.findOne({"restaurants._id":req.params.id}, function (err, profile) {
+        console.log(req.params.id)
+        if (err) return res.send(err);
+        const restpos = profile.restaurants.id(req.params.id)
+        const context = {restaurants: restpos, profile:profile};
+        return res.render("restaurants/edit", context);
+    });
+};
+
+
 
 // const destroy = {req, res} => {
 //     db.Profile.find
