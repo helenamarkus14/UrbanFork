@@ -1,7 +1,11 @@
 <%- include('../partials/header') %>
 
 <h2><%=profile.name%>'s Favorite Restaurants</h2>
-
+<ul>
+    <% profile.restaurants.forEach(function(r) { %>
+        <li><%= r.name %></li>
+    <% }) %>
+</ul>
 
 <a href="/profiles/<%=profile._id%>/restaurants/new">Add New</a>
 

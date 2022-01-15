@@ -11,14 +11,20 @@ const show = (req, res) => {
 };
 
 const newRestaurant = (req,res) => {
-    res.render("restaurants/new");
+    db.Profile.findById(req.params.id, function (err, profile) {
+        if (err) return res.send(err);
+        const context = {profile: profile};
+        return res.render('restaurants/new', context);
+})
 }
 
+
 const create = (req, res) => {
-    Profile.findById(req.params.id, function (err, profile) {
+    db.Profile.findById(req.params.id, function (err, profile) {
         profile.restaurants.push(req.body);
         profile.save(function (err) {
-          res.redirect(`/profiles/${profile._id}`);
+            if (err) return res.send(err);
+            res.redirect(`/profiles/${profile._id}`);
         });
       });
     };
