@@ -13,6 +13,14 @@ const show = (req, res) => {
 
 };
 
+const create = (req, res) => {
+    Profile.findById(req.params.id, function (err, profile) {
+        profile.restaurants.push(req.body);
+        profile.save(function (err) {
+          res.redirect(`/profiles/${profile._id}`);
+        });
+      });
+    }
 // const destroy = {req, res} => {
 //     db.Profile.find
 // }]
@@ -21,4 +29,5 @@ const show = (req, res) => {
 
 module.exports = {
     show,
+    create,
 }

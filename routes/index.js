@@ -1,4 +1,4 @@
 module.exports = {
     profiles: require('./profiles'),
-    // restaurants: require('./restaurants'),
+    restaurants: require('./restaurants'),
 }
