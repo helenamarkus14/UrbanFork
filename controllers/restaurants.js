@@ -40,6 +40,25 @@ const edit = (req, res) => {
     });
 };
 
+const update = (req, res) => {
+    db.Profile.findOne({"restaurants._id":req.params.id}, 
+    {
+        $set: {
+            ...req.body,
+        },
+    },
+    {new:true},
+    (err, profile) => {
+        if (err) return res.send(err);
+        profile.save(function(err){
+            if(err) return res.send(err);
+            res.redirect(`/profiles/${profile._id}`)
+    });
+    });
+};
+
+
+
 
 const destroy = (req, res) => {
     db.Profile.findOne({"restaurants._id":req.params.id}, function (err, profile) {
@@ -62,5 +81,6 @@ module.exports = {
     newRestaurant,
     create,
     edit,
+    update,
     destroy,
 }
