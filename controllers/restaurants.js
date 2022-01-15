@@ -1,9 +1,6 @@
 const db = require("../models");
 
 
-
-
-
 const show = (req, res) => {
     db.Profile.findOne({"restaurants._id":req.params.id}, function (err, restaurants) {
         if (err) return res.send(err);
@@ -12,6 +9,10 @@ const show = (req, res) => {
     });
 
 };
+
+const newRestaurant = (req,res) => {
+    res.render("restaurants/new");
+}
 
 const create = (req, res) => {
     Profile.findById(req.params.id, function (err, profile) {
@@ -29,5 +30,6 @@ const create = (req, res) => {
 
 module.exports = {
     show,
+    newRestaurant,
     create,
 }
