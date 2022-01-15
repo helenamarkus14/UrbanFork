@@ -31,14 +31,17 @@ const create = (req, res) => {
       });
     };
 
-    // const edit = (req, res) => {
-    //     db.Profile.findById(req.params.id, (err, foundRestaurant) => {
-    //         if(err) return res.send(err);
-    //         const context = {restaurants: foundRestaurant};
-    //         res.render("restaurants/edit", context)
-    //     })
-    // }
+    const edit = (req, res) => {
+        db.Profile.findOne({"restaurants._id":req.params.id}, function (err, profile) {
+            console.log(req.params.id)
+            if (err) return res.send(err);
+            const restpos = profile.restaurants.id(req.params.id)
+            const context = {restaurants: restpos};
+            return res.render("restaurants/edit", context);
+        });
     
+    };
+
 // const destroy = {req, res} => {
 //     db.Profile.find
 // }]
@@ -51,4 +54,5 @@ module.exports = {
     show,
     newRestaurant,
     create,
+    edit,
 }
