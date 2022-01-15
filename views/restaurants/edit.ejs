@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-<form id="submit-form" action="/restaurants/<%=restaurants.id %>?_method=PUT" method="POST">
+<form id="submit-form" action="/restaurants/<%= restaurants.id%>?_method=PUT" method="POST">
     
 
     <label>Name:</label>
@@ -29,6 +29,8 @@
     <label>Comment:</label>
     <input type="text" name="comment" value="<%=restaurants.comment%>">
     <input type="submit"value="Update">
+
+    
 </form>
 
 
