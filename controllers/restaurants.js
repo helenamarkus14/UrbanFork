@@ -41,10 +41,17 @@ const edit = (req, res) => {
 };
 
 
-
-// const destroy = {req, res} => {
-//     db.Profile.find
-// }]
+const destroy = (req, res) => {
+    db.Profile.findOne({"restaurants._id":req.params.id}, function (err, profile) {
+        if (err) return res.send(err);
+        const restDoc = profile.restaurants.id(req.params.id)
+        restDoc.remove();
+        profile.save(function(err){
+            if(err) return res.send(err);
+            return res.redirect(`/profiles/${profile._id}`)
+        });
+    });
+};
 
 
 
@@ -55,4 +62,5 @@ module.exports = {
     newRestaurant,
     create,
     edit,
+    destroy,
 }
