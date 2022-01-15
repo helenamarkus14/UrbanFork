@@ -21,10 +21,21 @@ const create = (req, res) => {
           res.redirect(`/profiles/${profile._id}`);
         });
       });
-    }
+    };
+
+    // const edit = (req, res) => {
+    //     db.Profile.findById(req.params.id, (err, foundRestaurant) => {
+    //         if(err) return res.send(err);
+    //         const context = {restaurants: foundRestaurant};
+    //         res.render("restaurants/edit", context)
+    //     })
+    // }
+    
 // const destroy = {req, res} => {
 //     db.Profile.find
 // }]
+
+
 
 
 
