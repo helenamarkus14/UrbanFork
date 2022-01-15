@@ -2,9 +2,11 @@ const db = require("../models");
 
 
 const show = (req, res) => {
-    db.Profile.findOne({"restaurants._id":req.params.id}, function (err, restaurants) {
+    db.Profile.findOne({"restaurants._id":req.params.id}, function (err, profile) {
+        console.log(req.params.id)
         if (err) return res.send(err);
-        const context = {restaurants: restaurants};
+        const restpos = profile.restaurants.id(req.params.id)
+        const context = {restaurants: restpos};
         return res.render("restaurants/show", context);
     });
 
