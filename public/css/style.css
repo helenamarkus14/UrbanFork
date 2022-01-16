@@ -3,6 +3,10 @@
     font-size: 50px;
 }
 
+h2 {
+  font-family: 'DM Serif Display', serif;
+}
+
 #submit-form {
     display: grid;
     grid-gap: 10px;
@@ -25,3 +29,31 @@
     border: black;
     
 }
+
+
+
+#submit-form {
+
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+   min-height: 100vh;
+  
+ }
+
+ div.form-items {
+  /* font-family: 'DM Serif Display', serif; */
+  border: 3px solid #DEE2E6;
+  border-radius: 50px;
+  padding: 75px;
+  
+ }
+
+ .money, .city, .comment-section{
+   padding: 10px 10px 15px 0px;
+ }
+
+ #restaurant-add-btn {
+   padding-left: 30px;
+ }
