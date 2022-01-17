@@ -2,16 +2,18 @@
  
 
 <form id="submit-form" action="/profiles/<%=profile._id%>/restaurants" method="POST">
+
 <div class="form-items">
   <h2>NEW RESTAURANT</h2> 
+
 <div class="rest-name">
  <label for="restaurant" class="name-label">Name:</label>
- <input type="name" class="form-control">
+ <input type="text" class="form-control">
 </div>
  
 <div class="cuisine">
  <label for="cuisine" class="cuisine-label">Cuisine:</label>
- <input type="cuisine" class="form-control" id="exampleFormControlInput1">
+ <input type="text" class="form-control" id="exampleFormControlInput1">
 </div>
  
 <div class="money">
@@ -27,22 +29,22 @@
 <div class="city">
  <label for="city" class="city-label">City:</label>
  <select name="city">
-   <option value="boulder">Boulder</option>
-   <option value="austin">Austin</option>
-   <option value="boston">Boston</option>
-   <option value="chicago">Chicago</option>
-   <option value="nyc">NYC</option>
+  <option value="Austin">Austin</option>
+  <option value="Boston">Boston</option>
+  <option value="Boulder">Boulder</option>
+  <option value="Chicago">Chicago</option>
+  <option value="NYC">NYC</option>
 </select>
 </div>
 
 <div class="locatiion">
  <label for="location" class="location-label">Location:</label>
- <input type="location" class="form-control" id="location">
+ <input type="text" class="form-control" id="location">
 </div>
  
 <div class="menurec">
  <label for="menu" class="menu-label">Recommended Menu:</label>
- <input type="cuisine" class="form-control" id="rec-menu">
+ <input type="text" class="form-control" id="rec-menu">
 </div>
  
 <div class="comment-section">
@@ -50,15 +52,11 @@
  <textarea class="form-control" id="comments" rows="3"></textarea>
 </div>
  
-
-<div id="restaurant-add-btn">
-<input class="btn btn-primary" value="Add Restaurant">
 </div>
 
- </div>
-
-
-</div> 
+<div id="restaurant-add-btn">
+  <input type="submit" class="btn btn-primary" value="Add Restaurant">
+</div>
 </form>
  
  

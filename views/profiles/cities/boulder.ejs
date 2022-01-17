@@ -1,6 +1,6 @@
-<%- include('../partials/header') %>
+<%- include('../../partials/header') %>
 
-<!-- View All Page -->
+
 
 <div class="container">
     <div class="row">
@@ -12,7 +12,7 @@
                 <hr>  
                     <ul class="nav nav-pills flex-column mb-auto" >
                     <li class="nav-item">
-                        <a href="/profiles/<%=profile._id%>" class="nav-link active" aria-current="page">
+                        <a href="/profiles/<%=profile._id%>" class="nav-link link-dark" id="mynav">
                         View All
                         </a>
                     </li>
@@ -27,7 +27,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/profiles/<%=profile._id%>/boulder" class="nav-link link-dark" id="mynav">
+                        <a href="/profiles/<%=profile._id%>/boulder" class="nav-link active" aria-current="page">
                         Boulder
                         </a>
                     </li>
@@ -60,16 +60,17 @@
             <h2><%=profile.name%>'s Favorite Restaurants</h2>
             <br>
 
-            <% profile.restaurants.forEach(function(r) { %>
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title"><%= r.name %></h5>
-                    <h6 class="card-subtitle mb-2 text-muted"><%= r.cuisine %></h6>
-                    <p class="card-text"><%= r.comment %></p>
-                    <a href="/profiles/<%=profile._id%>/restaurants/<%=r._id%>" class="card-link">View Details</a>
+            <% restlist.forEach(function(r) { %>
+                <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title"><%= r.name %></h5>
+                      <h6 class="card-subtitle mb-2 text-muted"><%= r.cuisine %></h6>
+                      <p class="card-text"><%= r.comment %></p>
+                      <a href="/profiles/<%=profile._id%>/restaurants/<%=r._id%>" class="card-link">View Details</a>
+                    </div>
                 </div>
-            </div>
             <% }) %>
+            
         </div>
     </div>
 </div>
@@ -77,4 +78,4 @@
 
 <br>
 <br>
-<%- include('../partials/footer') %>
+<%- include('../../partials/footer') %>
