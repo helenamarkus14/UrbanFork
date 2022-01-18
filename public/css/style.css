@@ -4,6 +4,10 @@
     color: rgb(30, 30, 59)
 }
 
+.logoimg{
+  width: 100%;
+}
+
 h2 {
   font-family: 'DM Serif Display', serif;
 }
