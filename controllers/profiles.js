@@ -10,6 +10,13 @@ const idx = (req,res) => {
     });
 };
 
+const about = (req, res) => {
+    db.Profile.findById(req.params.id, function (err, profile) {
+        if (err) return res.send(err);
+        const context = {profile: profile};
+        return res.render("about", context);
+    });
+};
 
 const show = (req, res) => {
     db.Profile.findById(req.params.id, function (err, profile) {
@@ -17,7 +24,6 @@ const show = (req, res) => {
         const context = {profile: profile};
         return res.render("profiles/show", context);
     });
-
 };
 
 const austin = (req,res) => {
@@ -89,6 +95,7 @@ const nyc = (req,res) => {
 
 module.exports = {
     idx,
+    about,
     show,
     austin,
     boston,
