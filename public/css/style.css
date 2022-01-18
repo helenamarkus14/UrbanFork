@@ -35,23 +35,6 @@ h2 {
 
   }
 
-#submit-form {
-
-  display: flex;
-  flex-direction: column;
-  /* justify-content: center; */
-  align-items: center;
-   min-height: 100vh;
-  
- }
-
- div.form-items {
-  /* font-family: 'DM Serif Display', serif; */
-  border: 3px solid #DEE2E6;
-  border-radius: 50px;
-  padding: 75px;
-  
- }
 
  .money, .city, .comment-section{
    padding: 10px 10px 15px 0px;
@@ -63,4 +46,37 @@ h2 {
 
 #graynav{
   max-width: 292px;
+}
+
+
+.indiv-restaurant{
+  border: black;
+ 
+}
+
+
+#submit-form {
+
+display: flex;
+flex-direction: column;
+/* justify-content: center; */
+align-items: center;
+ min-height: 100vh;
+}
+
+div.form-items {
+/* font-family: 'DM Serif Display', serif; */
+border: 3px solid #DEE2E6;
+border-radius: 50px;
+padding: 75px;
+
+}
+
+.name, .cuisine, .money, .city, .comment-section, .location, .menurec, .comment-section {
+ padding: 10px 0px 15px 0px;
+}
+
+#restaurant-add-btn {
+ padding-left: 30px;
+
 }
