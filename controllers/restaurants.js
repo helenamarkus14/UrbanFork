@@ -23,6 +23,7 @@ const newRestaurant = (req,res) => {
 
 const create = (req, res) => {
     db.Profile.findById(req.params.id, function (err, profile) {
+        console.log(req.body);
         profile.restaurants.push(req.body);
         profile.save(function (err) {
             if (err) return res.send(err);

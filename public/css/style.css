@@ -1,6 +1,7 @@
 .titlelogo {
     font-family: 'DM Serif Display', serif;
     font-size: 50px;
+    color: rgb(30, 30, 59)
 }
 
 h2 {
@@ -25,12 +26,14 @@ h2 {
     margin-left: auto;
   }
 
-.indiv-restaurant{
-    border: black;
-    
-}
+  #mynav:hover{
+    background-color: rgb(233, 235, 238);
+  }
 
+  .card{
+    margin-bottom: 3%;
 
+  }
 
 #submit-form {
 
@@ -57,3 +60,7 @@ h2 {
  #restaurant-add-btn {
    padding-left: 30px;
  }
+
+#graynav{
+  max-width: 292px;
+}
