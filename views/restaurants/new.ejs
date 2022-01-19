@@ -1,36 +1,39 @@
-<%- include('../partials/header') %> 
+ 
+<%- include('../partials/header') %>
 <body>
-    <div class="container-xxl px-md-5 bg-white shadow-lg">
-        <main>
-            <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-                <a href="/profiles" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-                  <img class ="logoimg" src="/images/uflogo2.png" />
-                  <!-- <h1 class="titlelogo"> UrbanFork </h1> -->
-                </a>
-          
-                <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                  <li><a href="/profiles" class="nav-link px-2 link-secondary">Home</a></li>
-                  <li><a href="/profiles/<%=profile._id%>/restaurants/new" class="nav-link px-2 link-dark">Add</a></li>
-                  <li><a href="/profiles/<%=profile._id%>" class="nav-link px-2 link-dark">Browse</a></li>
-                  <li><a href="/profiles/<%=profile._id%>/about" class="nav-link px-2 link-dark">About</a></li>
-                </ul>
-          
-                <div class="col-md-3 text-end">
-                  <button type="button" class="btn btn-outline-primary me-2">Login</button>
-                  <button type="button" class="btn btn-primary">Sign-up</button>
-                </div>
-              </header>
-              <!-- Header ends here -->
-
-
+   <div class="container-xxl px-md-5 bg-white shadow-lg">
+       <main>
+           <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+               <a href="/profiles" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+                 <img class ="logoimg" src="/images/uflogo2.png" />
+                 <!-- <h1 class="titlelogo"> UrbanFork </h1> -->
+               </a>
+        
+               <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                 <li><a href="/profiles" class="nav-link px-2 link-secondary">Home</a></li>
+                 <li><a href="/profiles/<%=profile._id%>/restaurants/new" class="nav-link px-2 link-dark">Add</a></li>
+                 <li><a href="/profiles/<%=profile._id%>" class="nav-link px-2 link-dark">Browse</a></li>
+                 <li><a href="/profiles/<%=profile._id%>/about" class="nav-link px-2 link-dark">About</a></li>
+               </ul>
+        
+               <div class="col-md-3 text-end">
+                 <button type="button" class="btn btn-outline-primary me-2">Login</button>
+                 <button type="button" class="btn btn-primary">Sign-up</button>
+               </div>
+             </header>
+             <!-- Header ends here -->
+ 
+ 
 <a class="btn btn-primary" href="/profiles/<%=profile._id%>" role="button">
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
-          <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
-  </svg>&nbsp;Back to list
+ <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+         <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+ </svg>&nbsp;Back to list
 </a>
+ 
 <form id="submit-form" action="/profiles/<%=profile._id%>/restaurants" method="POST">
+ <!-- <div class="shadow p-3 mb-5 bg-white rounded">  -->
 <div class="form-items">
- <h2 class="new-title">NEW RESTAURANT</h2>
+<h2 class="new-title">NEW RESTAURANT</h2>
 <div class="rest-name">
 <label for="restaurant" class="name-label">Name:</label>
 <input class="form-control" type="text" name="name">
@@ -42,23 +45,22 @@
 <div class="money">
 <label for="money" class="money-label">Money:</label>
 <select name="money">
-  <option value="$">$</option>
-  <option value="$$">$$</option>
-  <option value="$$$">$$$</option>
-  <option value="$$$$">$$$$</option>
+ <option value="$">$</option>
+ <option value="$$">$$</option>
+ <option value="$$$">$$$</option>
+ <option value="$$$$">$$$$</option>
 </select>
 </div>
 <div class="city">
 <label for="city" class="city-label">City:</label>
 <select name="city">
-  <option value="Austin">Austin</option>
-  <option value="Boston">Boston</option>
-  <option value="Boulder">Boulder</option>
-  <option value="Chicago">Chicago</option>
-  <option value="NYC">NYC</option>
+ <option value="Austin">Austin</option>
+ <option value="Boston">Boston</option>
+ <option value="Boulder">Boulder</option>
+ <option value="Chicago">Chicago</option>
+ <option value="NYC">NYC</option>
 </select>
 </div>
- 
 <div class="location">
 <label for="location" class="location-label">Location:</label>
 <input class="form-control" type="text" name="location">
@@ -72,11 +74,16 @@
 <input class="form-control" type="text" name="comment">
 </div>
 <div id="restaurant-add-btn">
- <input class="btn btn-primary" type="submit" value="Add Restaurant">
- </div>
+<input class="btn btn-primary" type="submit" value="Add Restaurant">
 </div>
+</div>
+ 
+<!-- </div> -->
+ 
 </form>
  
-
-
-<%- include('../partials/footer') %>   
+ 
+</div>
+ 
+ 
+<%- include('../partials/footer') %>  

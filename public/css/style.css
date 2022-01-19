@@ -56,42 +56,41 @@
 
 .indiv-restaurant{
   border: black;
- 
-}
-
-
-#submit-form {
-
-display: flex;
-flex-direction: column;
-/* justify-content: center; */
-align-items: center;
+ }
+  
+  
+ #submit-form {
+  
+ display: flex;
+ flex-direction: column;
+ /* justify-content: center; */
+ align-items: center;
  min-height: 100vh;
-}
-
-div.form-items {
-/* font-family: 'DM Serif Display', serif; */
-border: 3px solid #DEE2E6;
-border-radius: 50px;
-padding: 75px;
-
-}
-
-.name, .cuisine, .money, .city, .comment-section, .location, .menurec, .comment-section {
+ }
+  
+ div.form-items {
+ box-shadow:  0 .5rem 1rem rgba(0,0,0,.15);
+ border: 1px solid #DEE2E6;
+ border-radius: 50px;
+ padding: 75px;
+  
+ }
+  
+ .name, .cuisine, .money, .city, .comment-section, .location, .menurec, .comment-section {
  padding: 10px 0px 15px 0px;
-}
-
-#restaurant-add-btn {
- padding-left: 30px;
-
-}
-
-.location-small {
+ }
+  
+ #restaurant-add-btn {
+  padding: 0px 55px 0px 62px;
+  
+ }
+  
+ .location-small {
   font-size: 20px;
   display:inline;
-}
-
-input.deletebtn {
+ }
+  
+ input.deletebtn {
   height: 48px;
   width: 67.64px;
   background-color: #fff;
@@ -104,17 +103,44 @@ input.deletebtn {
   display: block;
   font-weight: 420;
   line-height: 1.5;
- 
   text-align: center;
   cursor: pointer;
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-}
-input.deletebtn:hover {
+ }
+ input.deletebtn:hover {
   background-color: #0d6efd;
   color:white;
-}
-
-.edit-delete-div {
+ }
+  
+ .edit-delete-div {
   display: flex;
   gap: 10px;
-}
+ }
+  
+ #back2listbtn {
+  margin-bottom: 60px;
+ }
+  
+ .display-4 {
+  font-family: 'DM Serif Display', serif;
+ }
+  
+  
+ .city-small {
+ color: #2e2f2f;
+ }
+  
+ .cuisine-grey {
+  color: #BEC2C2;
+  display: inline;
+ }
+  
+ span {
+  content: "\00B7";
+  size: 1000px;
+ }
+  
+ #restaurant-edit-btn {
+  padding: 0px 55px 0px 55px;
+ }
+ 
