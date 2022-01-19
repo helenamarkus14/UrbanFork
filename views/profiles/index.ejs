@@ -6,7 +6,8 @@
     <div class="container-xxl px-md-5 bg-white shadow-lg">
         <main>
             <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-                <a href="/profiles" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+                <div class="col-3"></div>
+                <a href="/profiles" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none" id="homelogo">
                     <img class ="logoimg" src="/images/uflogo2.png" />
                     <!-- <h1 class="titlelogo"> UrbanFork </h1> -->
                 </a>
@@ -17,25 +18,25 @@
                 </div>
               </header>
 
-<img class="restpic" src="/images/restaurantbasic.jpeg" />
-<!-- <div class="container">
-    <div class="row">
-        <div class="col-12">
-            <img class="restpic" src="/images/restaurantbasic.jpeg" />
-        </div>
+<div>
+    <img class="coverimg" src="/images/restaurantbasic.jpeg"/>
+</div>
+
+
+<div class="row"> 
+    <div class="col-12 mt-5" id="foodies">
+        <h2>Foodies</h2>
+        <ul class="users">  
+            <% profiles.forEach((profiles) => { %>
+                <li><a href="/profiles/<%=profiles._id%>"><%=profiles.name%></a></li>
+            <% }); %>
+        </ul>
     </div>
-    <div class="row">
+</div>
 
 
 
-    </div>
-</div> -->
 
 
-<ul class="users">  
-    <% profiles.forEach((profiles) => { %>
-        <li><a href="/profiles/<%=profiles._id%>"><%=profiles.name%></a></li>
-    <% }); %>
-</ul>
 
 <%- include('../partials/footer') %>   
