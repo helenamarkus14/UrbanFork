@@ -4,6 +4,14 @@
     color: rgb(30, 30, 59)
 }
 
+.logoimg{
+  width: 100%;
+}
+
+.coverimg{
+  width:100%;
+}
+
 
 #submit-form {
     display: grid;
