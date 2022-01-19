@@ -10,6 +10,28 @@
 
 .coverimg{
   width:100%;
+  margin-top: 2%;
+}
+
+#foodies{
+  text-align: center;
+  /* background-color: #d48e3279; */
+  background-color: #F3DFD1;
+  padding-bottom: 20%;
+}
+
+.foodieusers{
+  font-family: 'DM Serif Display', serif;
+  /* margin-top: 5%; */
+  font-size: 40px;
+  padding-top: 3%;
+  font-stretch: expanded;
+  color:white;
+};
+
+
+#test{
+
 }
 
 
