@@ -1,63 +1,88 @@
-<%- include('../partials/header') %> 
+​​<%- include('../partials/header') %>
 <body>
-
-    <div class="container-xxl px-md-5 bg-white shadow-lg">
-        <main>
-            <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-                <a href="/profiles" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-                    <img class ="logoimg" src="/images/uflogo2.png" />
-                    <!-- <h1 class="titlelogo"> UrbanFork </h1> -->
-                </a>
-          
-                <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                  <li><a href="/profiles" class="nav-link px-2 link-secondary">Home</a></li>
-                  <li><a href="/profiles/<%=profile._id%>/restaurants/new" class="nav-link px-2 link-dark">Add</a></li>
-                  <li><a href="/profiles/<%=profile._id%>" class="nav-link px-2 link-dark">Browse</a></li>
-                  <li><a href="/profiles/<%=profile._id%>/about" class="nav-link px-2 link-dark">About</a></li>
-                </ul>
-          
-                <div class="col-md-3 text-end">
-                  <button type="button" class="btn btn-outline-primary me-2">Login</button>
-                  <button type="button" class="btn btn-primary">Sign-up</button>
-                </div>
-              </header>
-              <!-- Header ends here -->
-
-
-
+ 
+   <div class="container-xxl px-md-5 bg-white shadow-lg">
+       <main>
+           <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+               <a href="/profiles" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+                   <img class ="logoimg" src="/images/uflogo2.png" />
+                   <!-- <h1 class="titlelogo"> UrbanFork </h1> -->
+               </a>
+        
+               <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                 <li><a href="/profiles" class="nav-link px-2 link-secondary">Home</a></li>
+                 <li><a href="/profiles/<%=profile._id%>/restaurants/new" class="nav-link px-2 link-dark">Add</a></li>
+                 <li><a href="/profiles/<%=profile._id%>" class="nav-link px-2 link-dark">Browse</a></li>
+                 <li><a href="/profiles/<%=profile._id%>/about" class="nav-link px-2 link-dark">About</a></li>
+               </ul>
+        
+               <div class="col-md-3 text-end">
+                 <button type="button" class="btn btn-outline-primary me-2">Login</button>
+                 <button type="button" class="btn btn-primary">Sign-up</button>
+               </div>
+             </header>
+             <!-- Header ends here -->
+ 
+ 
 <form id="submit-form" action="/restaurants/<%= restaurants.id%>?_method=PUT" method="POST">
+   <div class="form-items">
+    <h2 class="edit-title">edit</h2>
+ 
+   <div class="rest-name">
+   <label for="restaurant" class="name-label">Name:</label>
+   <input class="form-control" type="text" name="name" value="<%=restaurants.name%>">
+   </div>
+ 
+   <div class="cuisine">
+   <label for="cuisine" class="cuisine-label">Cuisine:</label>
+   <input class="form-control" type="text" name="cuisine" value="<%=restaurants.cuisine%>">
+   </div>
+ 
+   <div class="money">
+   <label for="money" class="money-label">Money:</label>
+   <select name="money" value="<%=restaurants.money%>">
+       <option value="<%=restaurants.money%>"><%=restaurants.money%></option>
+       <option value="$">$</option>
+       <option value="$$">$$</option>
+       <option value="$$$">$$$</option>
+       <option value="$$$$">$$$$</option>
+     </select>
+   </div>
+ 
+   <div class="city">
+   <label for="city" class="city-label">City:</label>
+   <select name="city" value="<%=restaurants.city%>">
+       <option value="<%=restaurants.city%>"><%=restaurants.city%></option>
+       <option value="Austin">Austin</option>
+       <option value="Boston">Boston</option>
+       <option value="Boulder">Boulder</option>
+       <option value="Chicago">Chicago</option>
+       <option value="NYC">NYC</option>
+   </select>
+   </div>
+   
+   <div class="location">
+   <label for="location" class="location-label">Location:</label>
+   <input class="form-control" type="text" name="location" value="<%=restaurants.location%>">
+   </div>
+   <div class="menurec">
+   <label for="menu" class="menu-label">Recommended Menu:</label>
+   <input class="form-control" type="text" name="recmenu" value="<%=restaurants.recMenu%>">
+   </div>
+   <div class="comment-section">
+   <label for="comments" class="comment-label">Comments:</label>
+   <input class="form-control" type="text" name="comment" value="<%=restaurants.comment%>">
+   </div>
+   <div id="restaurant-edit-btn">
+    <input class="btn btn-primary" type="submit" value="Update">
+    </div>
+   </div>
+   </form>
+   
+  
+ 
+ 
+ 
+<%- include('../partials/footer') %>  
+ 
     
-
-    <label>Name:</label>
-    <input type="text" name="name" value="<%=restaurants.name%>">
-    <label>Cuisine:</label>
-    <input type="text" name="cuisine" value="<%=restaurants.cuisine%>">
-    <label>Money</label>
-    <select name="money" value="<%=restaurants.money%>">
-        <option value="$">$</option>
-        <option value="$$">$$</option>
-        <option value="$$$">$$$</option>
-        <option value="$$$$">$$$$</option>
-      </select>
-    <label>City</label>
-    <select name="city" value="<%=restaurants.city%>">
-        <option value="Austin">Austin</option>
-        <option value="Boston">Boston</option>
-        <option value="Boulder">Boulder</option>
-        <option value="Chicago">Chicago</option>
-        <option value="NYC">NYC</option>
-    </select>
-    <label>Location</label>
-    <input type="text" name="location" value="<%=restaurants.location%>">
-    <label>Recommended Menu:</label>
-    <input type="text" name="recMenu" value="<%=restaurants.recMenu%>">
-    <label>Comment:</label>
-    <input type="text" name="comment" value="<%=restaurants.comment%>">
-    <input type="submit"value="Update">
-
-    
-</form>
-
-
-
-<%- include('../partials/footer') %>   
