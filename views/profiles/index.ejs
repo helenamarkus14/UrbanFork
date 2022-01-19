@@ -19,20 +19,45 @@
               </header>
 
 <div>
-    <img class="coverimg" src="/images/restaurantbasic.jpeg"/>
+    <img class="coverimg" src="/images/coverimage.png"/>
+</div>
+
+<div id="foodies">
+    <hr>
+<h2 class="foodieusers">Foodies</h2>
+<div class="container">
+<div class="row">
+   <% profiles.forEach((profiles) => { %>
+        <a href="/profiles/<%=profiles._id%>" class="d-flex align-items-center text-dark text-decoration-none">
+            <div>
+                <img src="futuregoogleavatar.png" class="card-img-top" id="googimg">
+                <br>
+                <h3><%=profiles.name%></h3>
+            </div>
+        </a>
+    <% }); %>
+</div>
+</div>
 </div>
 
 
+
+<!-- 
 <div class="row"> 
-    <div class="col-12 mt-5" id="foodies">
-        <h2>Foodies</h2>
+    <div class="col-12" id="foodies">
+        <h2 id="foodieusers">Foodies</h2>
         <ul class="users">  
             <% profiles.forEach((profiles) => { %>
-                <li><a href="/profiles/<%=profiles._id%>"><%=profiles.name%></a></li>
+            <div id="test">
+
+                
+                <a href="/profiles/<%=profiles._id%>" class="d-flex align-items-center text-dark text-decoration-none"><%=profiles.name%><br></a>
+            </div>
             <% }); %>
+
         </ul>
     </div>
-</div>
+</div> -->
 
 
 
