@@ -4,17 +4,6 @@
     color: rgb(30, 30, 59)
 }
 
-.logoimg{
-  width: 100%;
-}
-
-.restpic{
-  width:100%;
-}
-
-h2 {
-  font-family: 'DM Serif Display', serif;
-}
 
 #submit-form {
     display: grid;
@@ -87,4 +76,37 @@ padding: 75px;
 #restaurant-add-btn {
  padding-left: 30px;
 
+}
+
+.location-small {
+  font-size: 20px;
+  display:inline;
+}
+
+input.deletebtn {
+  height: 48px;
+  width: 67.64px;
+  background-color: #fff;
+  color: #0d6efd;;
+  border: 1px solid transparent;
+  border-color: #0d6efd;
+  border-radius: .25rem;
+  font-weight: 400;
+  font-size: 1.1rem;
+  display: block;
+  font-weight: 420;
+  line-height: 1.5;
+ 
+  text-align: center;
+  cursor: pointer;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+input.deletebtn:hover {
+  background-color: #0d6efd;
+  color:white;
+}
+
+.edit-delete-div {
+  display: flex;
+  gap: 10px;
 }
