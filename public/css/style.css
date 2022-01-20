@@ -33,14 +33,46 @@ font-size:small;
 
 .coverimg{
   width:100%;
-  margin-top: 2%;
+  /* margin-top: 2%; */
 }
+
+#maincontainer, #mainrow, #maincol{
+  padding: 0;
+}
+
+.tagline, .taglinesub, .taglinepre{
+  padding-left: 5%;
+}
+
+.tagline{
+  padding-top:1%;
+  font-family: 'DM Serif Display', serif;
+  /* padding-bottom: 1%; */
+}
+
+.taglinesub{
+  font-family: 'PT Serif', serif;
+  /* font-family: 'Outfit', sans-serif; */
+  /* font-family: 'Inter', sans-serif; */
+  /* font-family: 'Rubik', sans-serif; */
+  font-size: 20px;
+}
+
+.taglinepre{
+  color: gray;
+}
+
+.unforkettable{
+  color: #f3ae18
+}
+
 
 #foodies{
   text-align: center;
-  background-color: #F3DFD1;
-  /* background-color: #f3dfd1ab; */
+  /* background-color: #F3DFD1; */
+  background-color: #f3dfd1ab;
   padding-bottom: 5%;
+  margin-top: 5%;
 }
 
 .foodieusers{

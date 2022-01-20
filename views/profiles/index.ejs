@@ -18,14 +18,30 @@
                 </div>
               </header>
 
-<div>
+<!-- <div>
     <img class="coverimg" src="/images/coverimage.png"/>
+</div> -->
+
+<!-- <div class="container dflex"></div> -->
+<div class="container-fluid mt-2" id="maincontainer">
+    <div class="row" id="mainrow">
+    <div class="col-lg-6 align-self-center mt-5 mb-5">
+        <p class="taglinepre">The most transparent restaurant reviews</p>
+        <h1 class="tagline">Share your <br> <span class="unforkettable">unforkettable</span> restaurants</h1>
+        <h4 class="taglinesub">and discover favorites of fellow foodies</h4>
+    </div>
+    <div class="col-lg-6 mt-5 mb-5" id="maincol">
+    <img class="coverimg" src="/images/mainpage.jpg"/>
+    </div>
 </div>
+</div>
+
+
 
 <div id="foodies">
     
 <h2 class="foodieusers">Foodies</h2>
-<p class="text-muted fw-light"> Click on each user to see their list</p>
+<p class="text-muted"> Click on each user to see their list</p>
 <div class="container mt-5" id="foodiescontainer">
 <div class="row row-cols-4 pt-3" id="foodiesrow">
 
@@ -35,7 +51,7 @@
             <div>
                 <img src="futuregoogleavatar.png" class="rounded-circle" id="googimg">
                 <br>
-                <p class="h4 fw-light" id="namefont"><%=profile.name%></p>
+                <h5 class="fw-light"><%=profile.name%></h5>
             </div>
         </a>
         </div>
