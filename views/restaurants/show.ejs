@@ -37,9 +37,10 @@
                <h2 class="city-small"><%= restaurants.city %><div class="location-small"> <%= restaurants.location %> <span>&#183;</span> <i class="fa-solid fa-utensils"></i> <%= restaurants.cuisine %> <span>&#183;</span> <%= restaurants.money %> </div></h2>
               
                <hr class="my-4">
-               <img class="menuimg" src="/images/fork.png" /> <%= restaurants.recMenu %>
-      
-               <p> <div><%= restaurants.comment %></div></p>
+               <img class="menuimg" src="/images/forknife.png" /> <%= restaurants.recMenu %>
+                <br>
+                <br>
+               <div><img class="commentimg" src="/images/comment.png" /> <%= restaurants.comment %></div>
  
                <div class="edit-delete-div">
                <a class="btn btn-primary btn-lg" href="/profiles/<%=profile._id%>/restaurants/<%=restaurants._id%>/edit" role="button">Edit</a>
