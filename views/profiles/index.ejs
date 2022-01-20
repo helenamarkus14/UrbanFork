@@ -3,7 +3,7 @@
 <body>
     
 
-    <div class="container-xxl px-md-5 bg-white shadow-lg">
+    <div class="container-xxl px-md-5 bg-white shadow-lg" id="indexpage">
         <main>
             <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
                 <div class="col-3"></div>
@@ -25,42 +25,23 @@
 <div id="foodies">
     <hr>
 <h2 class="foodieusers">Foodies</h2>
-<div class="container">
-<div class="row">
-   <% profiles.forEach((profiles) => { %>
-        <a href="/profiles/<%=profiles._id%>" class="d-flex align-items-center text-dark text-decoration-none">
+<div class="container mt-5" id="foodiescontainer">
+<div class="row row-cols-4 pt-3" id="foodiesrow">
+
+    <% profiles.forEach((profile) => { %>
+        <div class="col mt-4 mb-5 d-flex justify-content-center text-center">
+        <a href="/profiles/<%=profile._id%>" class="d-flex align-items-center text-dark text-decoration-none">
             <div>
-                <img src="futuregoogleavatar.png" class="card-img-top" id="googimg">
+                <img src="futuregoogleavatar.png" class="rounded-circle" id="googimg">
                 <br>
-                <h3><%=profiles.name%></h3>
+                <p class="h3 fw-light" id="namefont"><%=profile.name%></p>
             </div>
         </a>
+        </div>
     <% }); %>
 </div>
 </div>
 </div>
-
-
-
-<!-- 
-<div class="row"> 
-    <div class="col-12" id="foodies">
-        <h2 id="foodieusers">Foodies</h2>
-        <ul class="users">  
-            <% profiles.forEach((profiles) => { %>
-            <div id="test">
-
-                
-                <a href="/profiles/<%=profiles._id%>" class="d-flex align-items-center text-dark text-decoration-none"><%=profiles.name%><br></a>
-            </div>
-            <% }); %>
-
-        </ul>
-    </div>
-</div> -->
-
-
-
 
 
 
