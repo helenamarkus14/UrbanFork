@@ -15,7 +15,7 @@ const mainRouter = require("./routes/main")
 const app = express();
 
 /* ====  Configuration  ==== */
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 app.set("view engine", "ejs");
 
 
