@@ -9,6 +9,7 @@ const methodOverride = require("method-override");
 
 /* ==== Internal Modules ==== */
 const routes = require("./routes");
+const mainRouter = require("./routes/main")
 
 /* ==== Instanced Modules  ==== */
 const app = express();
@@ -33,9 +34,7 @@ app.use((req, res, next) => {
 
 /* ====  Routes & Controllers  ==== */
 //Home Route
-app.get("/", (req, res) => {
-	res.render("index");
-});
+app.use('/', mainRouter);
 
 //404 Route
 app.get((req, res) => {
@@ -43,7 +42,6 @@ app.get((req, res) => {
 });
 
 //Internal Routes
-
 app.use("/profiles", routes.profiles);
 app.use("/", routes.restaurants);
 
