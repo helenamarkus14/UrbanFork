@@ -75,7 +75,10 @@
   max-width: 292px;
 }
 
+.new-title {
+  font-family: 'DM Serif Display', serif;
 
+}
 .indiv-restaurant{
   border: black;
  }
@@ -94,7 +97,7 @@
  box-shadow:  0 .5rem 1rem rgba(0,0,0,.15);
  border: 1px solid #DEE2E6;
  border-radius: 50px;
- padding: 75px;
+ padding: 50px 75px 50px 75px;
   
  }
   
@@ -129,6 +132,7 @@
   cursor: pointer;
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
  }
+
  input.deletebtn:hover {
   background-color: #0d6efd;
   color:white;
@@ -137,7 +141,7 @@
  .edit-delete-div {
   display: flex;
   gap: 10px;
-  margin-top: 100px;
+  margin-top: 60px;
  }
   
  #back2listbtn {
