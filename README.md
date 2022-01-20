@@ -25,16 +25,3 @@ On the details page:
 
 ### Data ERD 
 ![ERD](UrbanForkERD.png)
-
-
-    <% for (let i=0; i<profiles.length; i++){ %>
-        <% let num = i; %>
-    
-        <a href="/profiles/<%=profiles[i]._id%>" class="d-flex align-items-center text-dark text-decoration-none">
-            <div>
-                <img src="futuregoogleavatar.png" class="card-img-top" id="googimg">
-                <br>
-                <h3><%=profiles[i].name%></h3>
-            </div>
-        </a>
-     <% } %>
