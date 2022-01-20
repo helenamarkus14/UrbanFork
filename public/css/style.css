@@ -1,3 +1,26 @@
+#indexpage{
+  padding-bottom: 5%;
+}
+
+#viewallpage{
+  height:100vh;
+}
+
+#aboutpage{
+  height:100vh;
+}
+
+#rshowpage{
+  height:100vh;
+}
+
+.footerdiv{
+margin-top: 0;
+width: 100%; 
+text-align: center; 
+font-size:small;
+  }
+
 .titlelogo {
     font-family: 'DM Serif Display', serif;
     font-size: 50px;
@@ -15,25 +38,16 @@
 
 #foodies{
   text-align: center;
-  /* background-color: #d48e3279; */
   background-color: #F3DFD1;
-  padding-bottom: 20%;
+  padding-bottom: 5%;
 }
 
 .foodieusers{
   font-family: 'DM Serif Display', serif;
-  /* margin-top: 5%; */
   font-size: 40px;
   padding-top: 3%;
-  font-stretch: expanded;
   color:white;
 };
-
-
-#test{
-
-}
-
 
 #submit-form {
     display: grid;
@@ -62,6 +76,7 @@
 
   }
 
+ 
 
  .money, .city, .comment-section{
    padding: 10px 10px 15px 0px;
