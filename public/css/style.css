@@ -39,12 +39,13 @@ font-size:small;
 #foodies{
   text-align: center;
   background-color: #F3DFD1;
+  /* background-color: #f3dfd1ab; */
   padding-bottom: 5%;
 }
 
 .foodieusers{
   font-family: 'DM Serif Display', serif;
-  font-size: 40px;
+  font-size: 45px;
   padding-top: 3%;
   color:white;
 };
