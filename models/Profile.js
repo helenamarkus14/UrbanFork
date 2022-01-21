@@ -31,5 +31,6 @@ const profileSchema = new mongoose.Schema(
     }
 );
 
+profileSchema.index({name: "text"});
 
 module.exports = mongoose.model('Profile', profileSchema);

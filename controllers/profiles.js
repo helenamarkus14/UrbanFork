@@ -91,7 +91,14 @@ const nyc = (req,res) => {
 });
 };
 
-
+const search = (req,res) => {
+    let searchTerm = req.body.searchTerm;
+    db.Profile.find({ $text: { $search: searchTerm}}, function(err, searchresult){
+        if (err) return res.send(err);
+        const context = {searchresult:searchresult, user: req.user};
+        return res.render("profiles/search", context);
+    }
+    )}
 
 module.exports = {
     idx,
@@ -102,5 +109,5 @@ module.exports = {
     boulder,
     chicago,
     nyc,
-
+    search,
 }
