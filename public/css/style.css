@@ -70,21 +70,27 @@ font-size:small;
   background-color: #e4a317;
 }
 
-
-#foodies{
+.foodies{
   text-align: center;
   /* background-color: #F3DFD1; */
   background-color: #f3dfd1ab;
-  padding-bottom: 5%;
+  /* padding-bottom: 1%; */
   margin-top: 3%;
 }
-
 .foodieusers{
+  /* text-align: center;
+  padding-top:3%;
+  padding-bottom: 2%;
+  background-color: #f3dfd1ab; */
   font-family: 'DM Serif Display', serif;
   font-size: 45px;
   padding-top: 3%;
   color:white;
 };
+
+.scrollbar{
+  background-color: transparent;
+}
 
 #submit-form {
     display: grid;

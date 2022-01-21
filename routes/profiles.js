@@ -9,5 +9,6 @@ router.get("/:id/boston", ctrl.profiles.boston);
 router.get("/:id/boulder", ctrl.profiles.boulder);
 router.get("/:id/chicago", ctrl.profiles.chicago);
 router.get("/:id/nyc", ctrl.profiles.nyc);
+router.post("/search", ctrl.profiles.search)
 
 module.exports = router;
