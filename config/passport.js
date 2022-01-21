@@ -12,22 +12,24 @@ passport.use(
         callbackURL: process.env.GOOGLE_CALLBACK,
       },
       function (accessToken, refreshToken, profile, cb) {
-        Profile.findOne({ googleId: profile.id }, function (err, profile) {
+        Profile.findOne({ googleId: profile.id }, function (err, foodie){
           if (err) return cb(err);
-          if (profile) {
-            return cb(null, profile);
+          if (foodie) {
+            return cb(null, foodie);
           } else {
             const newProfile = new Profile({
               name: profile.displayName,
               email: profile.emails[0].value,
               googleId: profile.id,
+              avatarURL: profile.photos[0].value,
             });
             newProfile.save(function (err) {
               if (err) return cb(err);
               return cb(null, newProfile);
             });
           }
-        });
+        }
+        );
       }
     )
   );
