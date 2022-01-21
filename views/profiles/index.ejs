@@ -13,8 +13,11 @@
                 </a>
           
                 <div class="col-md-3 text-end">
-                  <button type="button" class="btn btn-outline-primary me-2">Login</button>
-                  <button type="button" class="btn btn-primary">Sign-up</button>
+                    <% if (user) { %>
+                        <a href="/logout">Log Out</a>
+                    <% } else { %>
+                        <a href="/auth/google">Login</a>
+                    <% } %>
                 </div>
               </header>
 
