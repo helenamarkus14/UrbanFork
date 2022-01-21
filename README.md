@@ -26,4 +26,8 @@ On the details page:
 ### Data ERD 
 ![ERD](UrbanForkERD.png)
 
+---
+### Resources:
+Main page picture: https://pixabay.com/photos/fruits-crepes-breakfast-plates-1869132/
+
 
