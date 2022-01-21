@@ -7,6 +7,14 @@ router.get("/profiles", function (req, res) {
   });
 });
 
+
+router.get("/profiles/show", function (req, res) {
+    res.render("/profiles/show", {
+      user: req.user,
+    });
+  });
+
+
 // log in
 router.get(
     "/auth/google",
