@@ -2,15 +2,7 @@
   padding-bottom: 5%;
 }
 
-#viewallpage{
-  height:100vh;
-}
-
-#aboutpage{
-  height:100vh;
-}
-
-#rshowpage{
+#viewallpage, #aboutpage, #rshowpage{
   height:100vh;
 }
 
@@ -19,7 +11,7 @@ margin-top: 0;
 width: 100%; 
 text-align: center; 
 font-size:small;
-  }
+}
 
 .titlelogo {
     font-family: 'DM Serif Display', serif;
@@ -40,8 +32,8 @@ font-size:small;
   padding: 0;
 }
 
-.tagline, .taglinesub, .taglinepre{
-  padding-left: 5%;
+.tagline, .taglinesub, .taglinepre {
+  padding-left: 7%;
 }
 
 .tagline{
@@ -59,11 +51,23 @@ font-size:small;
 }
 
 .taglinepre{
-  color: gray;
+  color: rgba(128, 128, 128, 0.87);
 }
 
 .unforkettable{
-  color: #f3ae18
+  color: #f3ae18;
+}
+
+#learnhowbtn{
+  margin-top: 2%;
+  margin-left: 7%;
+  background-color: #f3ae18;
+  color: white;
+  border: transparent;
+}
+
+#learnhowbtn:hover{
+  background-color: #e4a317;
 }
 
 
@@ -72,7 +76,7 @@ font-size:small;
   /* background-color: #F3DFD1; */
   background-color: #f3dfd1ab;
   padding-bottom: 5%;
-  margin-top: 5%;
+  margin-top: 3%;
 }
 
 .foodieusers{

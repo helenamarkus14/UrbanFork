@@ -8,25 +8,34 @@
             <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
                 <div class="col-3"></div>
                 <a href="/profiles" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none" id="homelogo">
-                    <img class ="logoimg" src="/images/uflogo2.png" />
+                    <img class ="logoimg" src="/images/uflogo2.png"  />
                     <!-- <h1 class="titlelogo"> UrbanFork </h1> -->
                 </a>
-          
+           
                 <div class="col-md-3 text-end">
                     <% if (user) { %>
-                        <a href="/logout">Log Out</a>
-                    <% } else { %>
-                        <a href="/auth/google">Login</a>
+                        <div class="dropdown">
+                            <a href="#" class="link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src=<%=user.avatarURL%> width="32" height="32" class="rounded-circle">
+                            </a>
+                            <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+                              <li><a class="dropdown-item" href="/logout">Sign out</a></li>
+                            </ul>
+                          </div>
+                    <% }else{ %>
+                        <a href="/auth/google" class="text-dark text-muted text-decoration-none"><i class="bi bi-person-circle text-muted"></i>&nbsp; Hello, Sign In</a>
                     <% } %>
                 </div>
               </header>
+            
 
-<div class="container-fluid mt-5" id="maincontainer">
+<div class="container-fluid mt-4" id="maincontainer">
     <div class="row" id="mainrow">
-    <div class="col-lg-6 align-self-center mt-4 mb-4">
+    <div class="col-lg-6 align-self-center mt-3 mb-5">
         <p class="taglinepre">The most transparent restaurant reviews</p>
         <h1 class="tagline">Share your <br> <span class="unforkettable">unforkettable</span> restaurants</h1>
         <h4 class="taglinesub">and discover favorites of fellow foodies</h4>
+        <a href="/profiles/about" class="btn link-dark text-decoration-none" id="learnhowbtn">Learn More</a>
     </div>
     <div class="col-lg-6 mt-4 mb-4" id="maincol">
     <img class="coverimg" src="/images/mainpage.jpg"/>

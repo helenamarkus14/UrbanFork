@@ -8,6 +8,6 @@ router.get("/profiles/:id/restaurants/:id/edit", ctrl.restaurants.edit);
 router.post("/profiles/:id/restaurants", ctrl.restaurants.create);
 router.put("/restaurants/:id", ctrl.restaurants.update);
 router.delete("/restaurants/:id", ctrl.restaurants.destroy);
-// router.get("/profiles/:id/restaurants/:id/edit", ctrl.restaurants.edit);
+
 
 module.exports = router;

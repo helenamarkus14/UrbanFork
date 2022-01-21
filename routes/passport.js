@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const req = require("express/lib/request");
 const passport = require("passport");
 
 router.get("/profiles", function (req, res) {
