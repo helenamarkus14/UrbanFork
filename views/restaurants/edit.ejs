@@ -11,7 +11,9 @@
         
                <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
                  <li><a href="/profiles" class="nav-link px-2 link-secondary">Home</a></li>
+                 <% if (profile._id.equals(user && user._id)) { %>   
                  <li><a href="/profiles/<%=profile._id%>/restaurants/new" class="nav-link px-2 link-dark">Add</a></li>
+                 <% } %>
                  <li><a href="/profiles/<%=profile._id%>" class="nav-link px-2 link-dark">Browse</a></li>
                  <li><a href="/profiles/<%=profile._id%>/about" class="nav-link px-2 link-dark">About</a></li>
                </ul>
@@ -79,7 +81,9 @@
    <input class="form-control" type="text" name="comment" value="<%=restaurants.comment%>">
    </div>
    <div id="restaurant-edit-btn">
+    <% if (profile._id.equals(user && user._id)) { %> 
     <input class="btn btn-primary" type="submit" value="Update">
+    <% } %>
     </div>
    </div>
    </form>

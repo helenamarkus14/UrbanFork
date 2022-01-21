@@ -6,7 +6,7 @@ const show = (req, res) => {
     db.Profile.findOne({"restaurants._id":req.params.id}, function (err, profile) {
         if (err) return res.send(err);
         const restpos = profile.restaurants.id(req.params.id)
-        const context = {restaurants: restpos, profile:profile};
+        const context = {restaurants: restpos, profile:profile, user: req.user};
         return res.render("restaurants/show", context);
     });
 
@@ -15,7 +15,7 @@ const show = (req, res) => {
 const newRestaurant = (req,res) => {
     db.Profile.findById(req.params.id, function (err, profile) {
         if (err) return res.send(err);
-        const context = {profile: profile};
+        const context = {profile: profile, user: req.user};
         return res.render('restaurants/new', context);
 })
 }
@@ -37,7 +37,7 @@ const edit = (req, res) => {
         console.log(req.params.id)
         if (err) return res.send(err);
         const restpos = profile.restaurants.id(req.params.id)
-        const context = {restaurants: restpos, profile:profile};
+        const context = {restaurants: restpos, profile:profile, user: req.user};
         return res.render("restaurants/edit", context);
     });
 };

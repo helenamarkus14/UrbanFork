@@ -13,7 +13,7 @@ const idx = (req,res, next) => {
 const about = (req, res) => {
     db.Profile.findById(req.params.id, function (err, profile) {
         if (err) return res.send(err);
-        const context = {profile: profile};
+        const context = {profile: profile, user: req.user};
         return res.render("about", context);
     });
 };
@@ -21,7 +21,7 @@ const about = (req, res) => {
 const show = (req, res) => {
     db.Profile.findById(req.params.id, function (err, profile) {
         if (err) return res.send(err);
-        const context = {profile: profile};
+        const context = {profile: profile, user: req.user,};
         return res.render("profiles/show", context);
     });
 };
@@ -34,7 +34,7 @@ const austin = (req,res) => {
             newarray.push(r);}
         });
         if (err) return res.send(err);
-        const context = {profile:profile, restlist: newarray};
+        const context = {profile:profile, restlist: newarray, user: req.user};
         return res.render("profiles/cities/austin", context);
 });
 };
@@ -47,7 +47,7 @@ const boston = (req,res) => {
             newarray.push(r);}
         });
         if (err) return res.send(err);
-        const context = {profile:profile, restlist: newarray};
+        const context = {profile:profile, restlist: newarray, user: req.user};
         return res.render("profiles/cities/boston", context);
 });
 };
@@ -60,7 +60,7 @@ const boulder = (req,res) => {
             newarray.push(r);}
         });
         if (err) return res.send(err);
-        const context = {profile:profile, restlist: newarray};
+        const context = {profile:profile, restlist: newarray, user: req.user};
         return res.render("profiles/cities/boulder", context);
 });
 };
@@ -73,7 +73,7 @@ const chicago = (req,res) => {
             newarray.push(r);}
         });
         if (err) return res.send(err);
-        const context = {profile:profile, restlist: newarray};
+        const context = {profile:profile, restlist: newarray, user: req.user};
         return res.render("profiles/cities/chicago", context);
 });
 };
@@ -86,7 +86,7 @@ const nyc = (req,res) => {
             newarray.push(r);}
         });
         if (err) return res.send(err);
-        const context = {profile:profile, restlist: newarray};
+        const context = {profile:profile, restlist: newarray, user: req.user};
         return res.render("profiles/cities/nyc", context);
 });
 };
