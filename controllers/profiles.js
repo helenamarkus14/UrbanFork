@@ -2,7 +2,7 @@ const db = require("../models");
 
 // restful routes FULL CRUD
 
-const idx = (req,res) => {
+const idx = (req,res, next) => {
     db.Profile.find({}, function (err, allProfiles) {
         if (err) return res.send(err);
         const context = {profiles: allProfiles, user: req.user,};
