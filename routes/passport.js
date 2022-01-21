@@ -1,10 +1,8 @@
-
+const router = require("express").Router();
 const passport = require("passport");
 
-const router = require("express").Router();
-
-router.get("/", function (req, res) {
-  res.render("index", {
+router.get("/profiles", function (req, res) {
+  res.render("/profiles", {
     user: req.user,
   });
 });
