@@ -10,7 +10,7 @@ const methodOverride = require("method-override");
 /* ==== Internal Modules ==== */
 const routes = require("./routes");
 const mainRouter = require("./routes/main") //for redirecting the first page 
-const googleRouter = require("./routes/passport")
+const googleRouter = require("./routes/passport") //for Google oauth
 /* ==== Instanced Modules  ==== */
 const app = express();
 
@@ -52,7 +52,6 @@ app.use((req, res, next) => {
 //Home Route
 app.use('/', mainRouter);
 
-
 //404 Route
 app.get((req, res) => {
 	res.send("404! Error! Page not found :(");
@@ -62,8 +61,6 @@ app.get((req, res) => {
 app.use("/profiles", routes.profiles);
 app.use("/", routes.restaurants);
 app.use('/', googleRouter);
-
-
 
 /* ====  Server Listener  ==== */
 app.listen(PORT, () => {

@@ -1,13 +1,12 @@
-<%- include('../../partials/header') %> 
-
+<%- include('../../partials/header') %>
 <body>
 
     <div class="container-xxl px-md-5 bg-white shadow-lg" id="viewallpage">
         <main>
             <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
                 <a href="/profiles" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-                <img class ="logoimg" src="/images/uflogo2.png" />
-                <!-- <h1 class="titlelogo"> UrbanFork </h1> -->
+                    <img class ="logoimg" src="/images/uflogo2.png" />
+                    <!-- <h1 class="titlelogo"> UrbanFork </h1> -->
                 </a>
           
                 <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
@@ -36,10 +35,6 @@
                 </div>
               </header>
               <!-- Header ends here -->
-
-
-
-<!-- View All Page -->
 
 <div class="container">
     <div class="row">
@@ -82,11 +77,7 @@
                     </li>
                     </ul>    
              <hr>
-
-                <div>
-
              <div>
-
                 <% if (profile._id.equals(user && user._id)) { %>    
                 <a href="/profiles/<%=profile._id%>/restaurants/new" class="d-flex align-items-center link-dark text-decoration-none" >
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
@@ -99,22 +90,24 @@
                 </div>
             </div> 
         </div>
-</div>
+
         <div class="col-8">
    
-            <h2><%=profile.name%>'s <br>Favorite Restaurants in Austin</h2>
+            <h2><%=profile.name%>'s <br>Favorite Restaurants in Boston</h2>
             <br>
 
-            <% profile.restaurants.forEach(function(r) { %>
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title"><%= r.name %></h5>
-                    <h6 class="card-subtitle mb-2 text-muted"><%= r.cuisine %>&nbsp; <%=r.money%></h6>
-                    <p class="card-text"><%= r.comment %></p>
-                    <a href="/profiles/<%=profile._id%>/restaurants/<%=r._id%>" class="stretched-link" ></a>
+            <% restlist.forEach(function(r) { %>
+                
+                <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title"><%= r.name %></h5>
+                      <h6 class="card-subtitle mb-2 text-muted"><%= r.cuisine %>&nbsp; <%=r.money%></h6>
+                      <p class="card-text"><%= r.comment %></p>
+                      <a href="/profiles/<%=profile._id%>/restaurants/<%=r._id%>" class="stretched-link" ></a>
+                    </div>
                 </div>
-            </div>
             <% }) %>
+            
         </div>
     </div>
 </div>
@@ -122,4 +115,5 @@
 
 <br>
 <br>
+
 <%- include('../../partials/footer') %>
