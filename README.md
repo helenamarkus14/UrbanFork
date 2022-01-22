@@ -5,10 +5,11 @@ Click here to launch: http://urbanfork.herokuapp.com/
 
 
 ### User Story
-On the log in screen:
-- As a user (AAU), I want to log in using my gmail account to browse or make changes.
 
 On the main page:
+- As a user (AAU), I want to log in using my gmail account to browse or make changes to my list.
+- AAU, I want to search by name for other users to view their list.
+- AAU, I want to filter restaurants by city.
 - AAU, I want to click add to add new restaurants.
 - AAU, I want to click on a certain user to browse their list of recommended restaurants.
 - AAU, I want to view details of selected restaurant.
