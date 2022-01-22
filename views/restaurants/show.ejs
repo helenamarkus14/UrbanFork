@@ -50,13 +50,13 @@
                <h2 class="city-small"><%= restaurants.city %><div class="location-small"> <span>&#183;</span> <%= restaurants.location %> <span>&#183;</span> <i class="fa-solid fa-utensils"></i> <%= restaurants.cuisine %> <span>&#183;</span> <%= restaurants.money %> </div></h2>
               
                <hr class="my-4">
-               <img class="menuimg" src="/images/forknife.png" /> <%= restaurants.recMenu %>
+               <h5><img class="menuimg" src="/images/forknife.png" /> <%= restaurants.recMenu %></h5>
                 <br>
-                <br>
-               <div><img class="commentimg" src="/images/comment.png" /> <%= restaurants.comment %></div>
+               <h5 class="fw-light"><img class="commentimg" src="/images/comment.png" /> <%= restaurants.comment %></h5>
+               
                <% if (profile._id.equals(user && user._id)) { %>   
-               <div class="edit-delete-div">
-                     
+               
+                <div class="edit-delete-div">
                <a class="btn btn-primary btn-lg" href="/profiles/<%=profile._id%>/restaurants/<%=restaurants._id%>/edit" role="button">Edit</a>
                              
                <form class="delete-btn" action="/restaurants/<%= restaurants._id %>?_method=DELETE" method="POST">
