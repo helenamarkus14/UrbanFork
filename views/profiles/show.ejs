@@ -1,121 +1,117 @@
 <%- include('../partials/header') %> 
 
 <body>
-
+    <!-- White page -->
     <div class="container-xxl px-md-5 bg-white shadow-lg" id="viewallpage">
-        <main>
-            <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-                <a href="/profiles" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-                <img class ="logoimg" src="/images/uflogo2.png" />
-                <!-- <h1 class="titlelogo"> UrbanFork </h1> -->
-                </a>
-          
-                <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                  <li><a href="/profiles" class="nav-link px-2 link-secondary">Home</a></li>
-                  <% if (profile._id.equals(user && user._id)) { %>   
-                  <li><a href="/profiles/<%=profile._id%>/restaurants/new" class="nav-link px-2 link-dark">Add</a></li>
-                  <% } %>
-                  <li><a href="/profiles/<%=profile._id%>" class="nav-link px-2 link-dark">Browse</a></li>
-                  <li><a href="/profiles/about" class="nav-link px-2 link-dark">About</a></li>
-                </ul>
-          
-                <div class="col-md-3 text-end">
-                    <% if (user) { %>
-                        <div class="dropdown">
-                            <a href="#" class="link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src=<%=user.avatarURL%> width="32" height="32" class="rounded-circle">
-                            </a>
-                            <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
-                                <li><a class="dropdown-item" href="/profiles/<%=user._id%>">My List</a></li>
-                                <li><a class="dropdown-item" href="/logout">Sign out</a></li>
-                            </ul>
-                          </div>
-                    <% }else{ %>
-                        <a href="/auth/google" class="text-dark text-muted text-decoration-none"><i class="bi bi-person-circle text-muted"></i>&nbsp; Hello, Sign In</a>
-                    <% } %>
-                </div>
-              </header>
-              <!-- Header ends here -->
-
-
-
-<!-- View All Page -->
-
-<div class="container">
-    <div class="row">
-
-        <div class="col-4">
-
-            <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" id="graynav">
-                <span class="fs-4">Cities</span>
-                <hr>  
-                    <ul class="nav nav-pills flex-column mb-auto" >
-                    <li class="nav-item">
-                        <a href="/profiles/<%=profile._id%>" class="nav-link active" aria-current="page">
-                        View All
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/profiles/<%=profile._id%>/austin" class="nav-link link-dark" id="mynav">
-                        Austin
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/profiles/<%=profile._id%>/boston" class="nav-link link-dark" id="mynav">
-                        Boston
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/profiles/<%=profile._id%>/boulder" class="nav-link link-dark" id="mynav">
-                        Boulder
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/profiles/<%=profile._id%>/chicago" class="nav-link link-dark" id="mynav">
-                        Chicago
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/profiles/<%=profile._id%>/nyc" class="nav-link link-dark" id="mynav">
-                        New York City
-                        </a>
-                    </li>
-                    </ul>    
-             <hr>
-                <div>
-                <% if (profile._id.equals(user && user._id)) { %>    
-                <a href="/profiles/<%=profile._id%>/restaurants/new" class="d-flex align-items-center link-dark text-decoration-none" >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
-                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                    </svg>
-                    <strong>&nbsp; Add New Restaurants</strong>
-                </a>
+    <main>
+        <!-- Header -->
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+            <a href="/profiles" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+            <img class ="logoimg" src="/images/uflogo2.png" />
+            <!-- <h1 class="titlelogo"> UrbanFork </h1> -->
+            </a>
+        
+            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="/profiles" class="nav-link px-2 link-secondary">Home</a></li>
+                <% if (profile._id.equals(user && user._id)) { %>   
+                <li><a href="/profiles/<%=profile._id%>/restaurants/new" class="nav-link px-2 link-dark">Add</a></li>
                 <% } %>
+                <li><a href="/profiles/<%=profile._id%>" class="nav-link px-2 link-dark">Browse</a></li>
+                <li><a href="/profiles/about" class="nav-link px-2 link-dark">About</a></li>
+            </ul>
+        
+            <div class="col-md-3 text-end">
+                <% if (user) { %>
+                    <div class="dropdown">
+                        <a href="#" class="link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src=<%=user.avatarURL%> width="32" height="32" class="rounded-circle">
+                        </a>
+                        <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+                            <li><a class="dropdown-item" href="/profiles/<%=user._id%>">My List</a></li>
+                            <li><a class="dropdown-item" href="/logout">Sign out</a></li>
+                        </ul>
+                    </div>
+                <% }else{ %>
+                    <a href="/auth/google" class="text-dark text-muted text-decoration-none"><i class="bi bi-person-circle text-muted"></i>&nbsp; Hello, Sign In</a>
+                <% } %>
+            </div>
+        </header>
+
+
+
+        <!-- View All Page -->
+
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" id="graynav">
+                        <span class="fs-4">Cities</span>
+                        <hr>  
+                        <ul class="nav nav-pills flex-column mb-auto" >
+                            <li class="nav-item">
+                                <a href="/profiles/<%=profile._id%>" class="nav-link active" aria-current="page">
+                                View All
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/profiles/<%=profile._id%>/austin" class="nav-link link-dark" id="mynav">
+                                Austin
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/profiles/<%=profile._id%>/boston" class="nav-link link-dark" id="mynav">
+                                Boston
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/profiles/<%=profile._id%>/boulder" class="nav-link link-dark" id="mynav">
+                                Boulder
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/profiles/<%=profile._id%>/chicago" class="nav-link link-dark" id="mynav">
+                                Chicago
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/profiles/<%=profile._id%>/nyc" class="nav-link link-dark" id="mynav">
+                                New York City
+                                </a>
+                            </li>
+                        </ul>    
+                        <hr>
+                        <div>
+                        <% if (profile._id.equals(user && user._id)) { %>    
+                        <a href="/profiles/<%=profile._id%>/restaurants/new" class="d-flex align-items-center link-dark text-decoration-none" >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                            </svg>
+                            <strong>&nbsp; Add New Restaurants</strong>
+                        </a>
+                        <% } %>
+                        </div>
+                    </div> 
                 </div>
-            </div> 
-        </div>
 
-        <div class="col-8">
-   
-            <h2><%=profile.name%>'s <br>Favorite Restaurants</h2>
-            <br>
-
-            <% profile.restaurants.forEach(function(r) { %>
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title"><%= r.name %></h5>
-                    <h6 class="card-subtitle mb-2 text-muted"><%= r.cuisine %>&nbsp; <%=r.money%></h6>
-                    <p class="card-text"><%= r.comment %></p>
-                    <a href="/profiles/<%=profile._id%>/restaurants/<%=r._id%>" class="stretched-link" ></a>
+                <div class="col-8">
+                    <h2><%=profile.name%>'s <br>Favorite Restaurants</h2>
+                    <br>
+                    <% profile.restaurants.forEach(function(r) { %>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= r.name %></h5>
+                            <h6 class="card-subtitle mb-2 text-muted"><%= r.cuisine %>&nbsp; <%=r.money%></h6>
+                            <p class="card-text"><%= r.comment %></p>
+                            <a href="/profiles/<%=profile._id%>/restaurants/<%=r._id%>" class="stretched-link" ></a>
+                        </div>
+                    </div>
+                    <% }) %>
                 </div>
             </div>
-            <% }) %>
         </div>
-    </div>
-</div>
 
-
-<br>
-<br>
+        <br>
+        <br>
+        
 <%- include('../partials/footer') %>

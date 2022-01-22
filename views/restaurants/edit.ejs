@@ -1,103 +1,106 @@
 ​​<%- include('../partials/header') %>
 <body>
- 
+  <!--White page  -->
    <div class="container-xxl px-md-5 bg-white shadow-lg">
        <main>
-           <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-               <a href="/profiles" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-                   <img class ="logoimg" src="/images/uflogo2.png" />
-                   <!-- <h1 class="titlelogo"> UrbanFork </h1> -->
-               </a>
-        
-               <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                 <li><a href="/profiles" class="nav-link px-2 link-secondary">Home</a></li>
-                 <% if (profile._id.equals(user && user._id)) { %>   
-                 <li><a href="/profiles/<%=profile._id%>/restaurants/new" class="nav-link px-2 link-dark">Add</a></li>
-                 <% } %>
-                 <li><a href="/profiles/<%=profile._id%>" class="nav-link px-2 link-dark">Browse</a></li>
-                 <li><a href="/profiles/about" class="nav-link px-2 link-dark">About</a></li>
-               </ul>
-        
-               <div class="col-md-3 text-end">
-                <% if (user) { %>
-                    <div class="dropdown">
-                        <a href="#" class="link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src=<%=user.avatarURL%> width="32" height="32" class="rounded-circle">
-                        </a>
-                        <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
-                          <li><a class="dropdown-item" href="/profiles/<%=user._id%>">My List</a></li>
-                          <li><a class="dropdown-item" href="/logout">Sign out</a></li>
-                        </ul>
-                      </div>
-                <% }else{ %>
-                    <a href="/auth/google" class="text-dark text-muted text-decoration-none"><i class="bi bi-person-circle text-muted"></i>&nbsp; Hello, Sign In</a>
+         <!-- Header -->
+          <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+              <a href="/profiles" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+                  <img class ="logoimg" src="/images/uflogo2.png" />
+                  <!-- <h1 class="titlelogo"> UrbanFork </h1> -->
+              </a>
+      
+              <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="/profiles" class="nav-link px-2 link-secondary">Home</a></li>
+                <% if (profile._id.equals(user && user._id)) { %>   
+                <li><a href="/profiles/<%=profile._id%>/restaurants/new" class="nav-link px-2 link-dark">Add</a></li>
                 <% } %>
-            </div>
-             </header>
-             <!-- Header ends here -->
- 
+                <li><a href="/profiles/<%=profile._id%>" class="nav-link px-2 link-dark">Browse</a></li>
+                <li><a href="/profiles/about" class="nav-link px-2 link-dark">About</a></li>
+              </ul>
+      
+              <div class="col-md-3 text-end">
+              <% if (user) { %>
+                  <div class="dropdown">
+                      <a href="#" class="link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                          <img src=<%=user.avatarURL%> width="32" height="32" class="rounded-circle">
+                      </a>
+                      <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+                        <li><a class="dropdown-item" href="/profiles/<%=user._id%>">My List</a></li>
+                        <li><a class="dropdown-item" href="/logout">Sign out</a></li>
+                      </ul>
+                    </div>
+              <% }else{ %>
+                  <a href="/auth/google" class="text-dark text-muted text-decoration-none"><i class="bi bi-person-circle text-muted"></i>&nbsp; Hello, Sign In</a>
+              <% } %>
+              </div>
+          </header>
+            
+
+ <!-- Back button -->
 <a class="btn btn-primary" href="/profiles/<%=profile._id%>/restaurants/<%=restaurants._id%>" role="button">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
 </svg>&nbsp;Back to details
 </a>
 
+<!-- Form -->
 <form id="submit-form" action="/restaurants/<%= restaurants.id%>?_method=PUT" method="POST">
-   <div class="form-items">
-   
- 
-   <div class="rest-name">
-   <label for="restaurant" class="name-label">Name:</label>
-   <input class="form-control" type="text" name="name" value="<%=restaurants.name%>">
-   </div>
- 
-   <div class="cuisine">
-   <label for="cuisine" class="cuisine-label">Cuisine:</label>
-   <input class="form-control" type="text" name="cuisine" value="<%=restaurants.cuisine%>">
-   </div>
- 
-   <div class="money">
-   <label for="money" class="money-label">Money:</label>
-   <select name="money" value="<%=restaurants.money%>">
-       <option value="<%=restaurants.money%>"><%=restaurants.money%></option>
-       <option value="$">$</option>
-       <option value="$$">$$</option>
-       <option value="$$$">$$$</option>
-       <option value="$$$$">$$$$</option>
-     </select>
-   </div>
- 
-   <div class="city">
-   <label for="city" class="city-label">City:</label>
-   <select name="city" value="<%=restaurants.city%>">
-       <option value="<%=restaurants.city%>"><%=restaurants.city%></option>
-       <option value="Austin">Austin</option>
-       <option value="Boston">Boston</option>
-       <option value="Boulder">Boulder</option>
-       <option value="Chicago">Chicago</option>
-       <option value="NYC">NYC</option>
-   </select>
-   </div>
-   
-   <div class="location">
-   <label for="location" class="location-label">Location:</label>
-   <input class="form-control" type="text" name="location" value="<%=restaurants.location%>">
-   </div>
-   <div class="menurec">
-   <label for="recMenu" class="menu-label">Recommended Menu:</label>
-   <input class="form-control" type="text" name="recMenu" value="<%=restaurants.recMenu%>">
-   </div>
-   <div class="comment-section">
-   <label for="comments" class="comment-label">Comments:</label>
-   <input class="form-control" type="text" name="comment" value="<%=restaurants.comment%>">
-   </div>
-   <div id="restaurant-edit-btn">
-    <% if (profile._id.equals(user && user._id)) { %> 
-    <input class="btn btn-primary" type="submit" value="Update">
-    <% } %>
+  <div class="form-items">
+    
+  
+    <div class="rest-name">
+      <label for="restaurant" class="name-label">Name:</label>
+      <input class="form-control" type="text" name="name" value="<%=restaurants.name%>">
     </div>
-   </div>
-   </form>
+  
+    <div class="cuisine">
+      <label for="cuisine" class="cuisine-label">Cuisine:</label>
+      <input class="form-control" type="text" name="cuisine" value="<%=restaurants.cuisine%>">
+    </div>
+  
+    <div class="money">
+      <label for="money" class="money-label">Money:</label>
+      <select name="money" value="<%=restaurants.money%>">
+          <option value="<%=restaurants.money%>"><%=restaurants.money%></option>
+          <option value="$">$</option>
+          <option value="$$">$$</option>
+          <option value="$$$">$$$</option>
+          <option value="$$$$">$$$$</option>
+        </select>
+    </div>
+  
+    <div class="city">
+      <label for="city" class="city-label">City:</label>
+      <select name="city" value="<%=restaurants.city%>">
+          <option value="<%=restaurants.city%>"><%=restaurants.city%></option>
+          <option value="Austin">Austin</option>
+          <option value="Boston">Boston</option>
+          <option value="Boulder">Boulder</option>
+          <option value="Chicago">Chicago</option>
+          <option value="NYC">NYC</option>
+      </select>
+    </div>
+    
+    <div class="location">
+      <label for="location" class="location-label">Location:</label>
+      <input class="form-control" type="text" name="location" value="<%=restaurants.location%>">
+    </div>
+    <div class="menurec">
+      <label for="recMenu" class="menu-label">Recommended Menu:</label>
+      <input class="form-control" type="text" name="recMenu" value="<%=restaurants.recMenu%>">
+    </div>
+    <div class="comment-section">
+      <label for="comments" class="comment-label">Comments:</label>
+      <input class="form-control" type="text" name="comment" value="<%=restaurants.comment%>">
+    </div>
+    <div id="restaurant-edit-btn">
+      <% if (profile._id.equals(user && user._id)) { %> 
+      <input class="btn btn-primary" type="submit" value="Update">
+      <% } %>
+    </div>
+  </div>
+</form>
    
   
  

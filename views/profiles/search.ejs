@@ -2,85 +2,86 @@
 
 <body>
     
-
-    <div class="container-xxl px-md-5 bg-white shadow-lg" id="indexpage">
-        <main>
-            <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-                <div class="col-3"></div>
-                <a href="/profiles" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none" id="homelogo">
-                    <img class ="logoimg" src="/images/uflogo2.png"  />
-                    <!-- <h1 class="titlelogo"> UrbanFork </h1> -->
-                </a>
-           
-                <div class="col-md-3 text-end">
-                    <% if (user) { %>
-                        <div class="dropdown">
-                            <a href="#" class="link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src=<%=user.avatarURL%> width="32" height="32" class="rounded-circle">
-                            </a>
-                            <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
-                                <li><a class="dropdown-item" href="/profiles/<%=user._id%>">My List</a></li>
-                              <li><a class="dropdown-item" href="/logout">Sign out</a></li>
-                            </ul>
-                          </div>
-                    <% }else{ %>
-                        <a href="/auth/google" class="text-dark text-muted text-decoration-none"><i class="bi bi-person-circle text-muted"></i>&nbsp; Hello, Sign In</a>
-                    <% } %>
-                </div>
-              </header>
-            
-
-<div class="container-fluid mt-4" id="maincontainer">
-    <div class="row" id="mainrow">
-    <div class="col-lg-6 align-self-center mt-3 mb-5">
-        <p class="taglinepre">The most transparent restaurant reviews</p>
-        <h1 class="tagline">Share your <br> <span class="unforkettable">unforkettable</span> restaurants</h1>
-        <h4 class="taglinesub">and discover favorites of fellow foodies</h4>
-        <a href="/profiles/about" class="btn link-dark text-decoration-none" id="learnhowbtn">Learn More</a>
-    </div>
-    <div class="col-lg-6 mt-4 mb-4" id="maincol">
-    <img class="coverimg" src="/images/mainpage.jpg"/>
-    </div>
-</div>
-</div>
-
-
-<div class="foodies">
-<div class="pb-4">  
-    
-<h2 class="foodieusers">Foodies</h2>
-<p class="text-muted"> Click on each user to see their list or search for a user</p>
-    <div class="row align-items-center">
-        <div class="col-6 offset-3">
-            <form method="POST" action="/profiles/search" class= id="searchbar" autocomplete="off"> 
-                <input type="search" name="searchTerm" placeholder="Search..." class="form-control" aria-label="Search">
-            </form><br>
-            <a href="/profiles" class="link-dark text-decoration-none text-muted">
-                <i class="bi bi-arrow-left"></i>
-                Back to list
+<!-- White page -->
+<div class="container-xxl px-md-5 bg-white shadow-lg" id="indexpage">
+    <main>
+        <!-- Header -->
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+            <div class="col-3"></div>
+            <a href="/profiles" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none" id="homelogo">
+                <img class ="logoimg" src="/images/uflogo2.png"  />
+                <!-- <h1 class="titlelogo"> UrbanFork </h1> -->
             </a>
-        </div>  
-    </div>
-</div>
-<div style="height:470px;" class="scrollbar, overflow-auto">
-<div class="container mt-5" id="foodcontainer">
-<div class="row row-cols-4 pt-3 align-items-start" id="foodiesrow">
-
-    <% searchresult.forEach((profile) => { %>
-        <div class="col mt-4 mb-5 d-flex justify-content-center text-center">
-        <a href="/profiles/<%=profile._id%>" class="d-flex align-items-center text-dark text-decoration-none">
-            <div>
-                <img src=<%=profile.avatarURL%> class="rounded-circle" id="googimg">
-                <br>
-                <h5 class="fw-light pt-3"><%=profile.name%></h5>
+        
+            <div class="col-md-3 text-end">
+                <% if (user) { %>
+                    <div class="dropdown">
+                        <a href="#" class="link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src=<%=user.avatarURL%> width="32" height="32" class="rounded-circle">
+                        </a>
+                        <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+                            <li><a class="dropdown-item" href="/profiles/<%=user._id%>">My List</a></li>
+                            <li><a class="dropdown-item" href="/logout">Sign out</a></li>
+                        </ul>
+                        </div>
+                <% }else{ %>
+                    <a href="/auth/google" class="text-dark text-muted text-decoration-none"><i class="bi bi-person-circle text-muted"></i>&nbsp; Hello, Sign In</a>
+                <% } %>
             </div>
-        </a>
+            </header>
+        
+        <!-- Cover -->
+        <div class="container-fluid mt-4" id="maincontainer">
+            <div class="row" id="mainrow">
+                <div class="col-lg-6 align-self-center mt-3 mb-5">
+                    <p class="taglinepre">The most transparent restaurant reviews</p>
+                    <h1 class="tagline">Share your <br> <span class="unforkettable">unforkettable</span> restaurants</h1>
+                    <h4 class="taglinesub">and discover favorites of fellow foodies</h4>
+                    <a href="/profiles/about" class="btn link-dark text-decoration-none" id="learnhowbtn">Learn More</a>
+                </div>
+                <div class="col-lg-6 mt-4 mb-4" id="maincol">
+                    <img class="coverimg" src="/images/mainpage.jpg"/>
+                </div>
+            </div>
         </div>
-    <% }); %>
-</div>
-</div>
-</div>
-</div>
+
+        <!-- Foodies Pink Box -->
+        <div class="foodies">
+            <div class="pb-4">  
+                <h2 class="foodieusers">Foodies</h2>
+                <p class="text-muted"> Click on each user to see their list or search for a user</p>
+                <div class="row align-items-center">
+                    <div class="col-6 offset-3">
+                        <form method="POST" action="/profiles/search" class= id="searchbar" autocomplete="off"> 
+                            <input type="search" name="searchTerm" placeholder="Search..." class="form-control" aria-label="Search">
+                        </form><br>
+                        <a href="/profiles" class="link-dark text-decoration-none text-muted">
+                            <i class="bi bi-arrow-left"></i>
+                            Back to list
+                        </a>
+                    </div>  
+                </div>
+            </div>
+            
+            <!-- Users -->
+            <div style="height:490px;" class="scrollbar, overflow-auto">
+                <div class="container mt-5" id="foodcontainer">
+                    <div class="row row-cols-4 pt-3 align-items-start" id="foodiesrow">
+                    <% searchresult.forEach((profile) => { %>
+                        <div class="col mt-4 mb-5 d-flex justify-content-center text-center">
+                            <a href="/profiles/<%=profile._id%>" class="d-flex align-items-center text-dark text-decoration-none">
+                            <div>
+                                <img src=<%=profile.avatarURL%> class="rounded-circle" id="googimg">
+                                <br>
+                                <h5 class="fw-light pt-3"><%=profile.name%></h5>
+                            </div>
+                            </a>
+                        </div>
+                    <% }); %>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
 
