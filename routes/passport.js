@@ -23,11 +23,11 @@ router.get(
     })
   );
 
-  // log out
+// log out
   router.get("/logout", function (req, res) {
     req.logout();
     res.redirect("/");
   });
 
 
-  module.exports = router;
+module.exports = router;

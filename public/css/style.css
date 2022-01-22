@@ -6,6 +6,7 @@
   height:100vh;
   overflow:auto;
 }
+
 #aboutpage{
   height:100vh;
   overflow-y:auto;
@@ -32,7 +33,6 @@ font-size:small;
 
 .coverimg{
   width:100%;
-  /* margin-top: 2%; */
 }
 
 #maincontainer, #mainrow, #maincol{
@@ -46,14 +46,10 @@ font-size:small;
 .tagline{
   padding-top:1%;
   font-family: 'DM Serif Display', serif;
-  /* padding-bottom: 1%; */
 }
 
 .taglinesub{
   font-family: 'PT Serif', serif;
-  /* font-family: 'Outfit', sans-serif; */
-  /* font-family: 'Inter', sans-serif; */
-  /* font-family: 'Rubik', sans-serif; */
   font-size: 20px;
 }
 
@@ -81,14 +77,10 @@ font-size:small;
   text-align: center;
   /* background-color: #F3DFD1; */
   background-color: #f3dfd1ab;
-  /* padding-bottom: 1%; */
   margin-top: 3%;
 }
+
 .foodieusers{
-  /* text-align: center;
-  padding-top:3%;
-  padding-bottom: 2%;
-  background-color: #f3dfd1ab; */
   font-family: 'DM Serif Display', serif;
   font-size: 45px;
   padding-top: 3%;
@@ -109,41 +101,38 @@ font-size:small;
 }
 
 #submit-form {
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: repeat(2, minmax(auto, 22rem));
-  }
-  
-  #new-form *, #add-review-form *  {
-    font-size: 20px;
-    padding: 5px;
-    border-radius: 5px;
-  }
-  
-  #new-form input[type="submit"] {
-    grid-column: span 2;
-    width: 10rem;
-    margin-left: auto;
-  }
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(2, minmax(auto, 22rem));
+}
 
-  #mynav:hover{
-    background-color: rgb(233, 235, 238);
-  }
+#new-form *, #add-review-form *  {
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 5px;
+}
 
-  .card{
-    margin-bottom: 3%;
+#new-form input[type="submit"] {
+  grid-column: span 2;
+  width: 10rem;
+  margin-left: auto;
+}
 
-  }
+#mynav:hover{
+  background-color: rgb(233, 235, 238);
+}
 
- 
+.card{
+  margin-bottom: 3%;
+}
 
- .money, .city, .comment-section{
-   padding: 10px 10px 15px 0px;
- }
+.money, .city, .comment-section{
+  padding: 10px 10px 15px 0px;
+}
 
- #restaurant-add-btn {
-   padding-left: 30px;
- }
+#restaurant-add-btn {
+  padding-left: 30px;
+}
 
 #graynav{
   max-width: 292px;
@@ -151,109 +140,104 @@ font-size:small;
 
 .new-title {
   font-family: 'DM Serif Display', serif;
-
 }
+
 .indiv-restaurant{
   border: black;
- }
+}
   
   
- #submit-form {
+#submit-form {
+display: flex;
+flex-direction: column;
+align-items: center;
+min-height: 100vh;
+}
   
- display: flex;
- flex-direction: column;
- /* justify-content: center; */
- align-items: center;
- min-height: 100vh;
- }
-  
- div.form-items {
- box-shadow:  0 .5rem 1rem rgba(0,0,0,.15);
- border: 1px solid #DEE2E6;
- border-radius: 50px;
- padding: 50px 75px 50px 75px;
-  
- }
-  
- .name, .cuisine, .money, .city, .comment-section, .location, .menurec, .comment-section {
- padding: 10px 0px 15px 0px;
- }
-  
- #restaurant-add-btn {
-  padding: 0px 55px 0px 62px;
-  
- }
-  
- .location-small {
-  font-size: 20px;
-  display:inline;
- }
-  
- input.deletebtn {
-  height: 48px;
-  width: 67.64px;
-  background-color: #fff;
-  color: #0d6efd;;
-  border: 1px solid transparent;
-  border-color: #0d6efd;
-  border-radius: .25rem;
-  font-weight: 400;
-  font-size: 1.1rem;
-  display: block;
-  font-weight: 420;
-  line-height: 1.5;
-  text-align: center;
-  cursor: pointer;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
- }
+div.form-items {
+box-shadow:  0 .5rem 1rem rgba(0,0,0,.15);
+border: 1px solid #DEE2E6;
+border-radius: 50px;
+padding: 50px 75px 50px 75px;
+}
 
- input.deletebtn:hover {
-  background-color: #0d6efd;
-  color:white;
- }
-  
- .edit-delete-div {
-  display: flex;
-  gap: 10px;
-  margin-top: 60px;
- }
-  
- #back2listbtn {
-  margin-bottom: 60px;
- }
-  
- .display-4 {
-  font-family: 'DM Serif Display', serif;
- }
-  
-  
- .city-small {
- color: #2e2f2f;
- }
-  
- .cuisine-grey {
-  color: #BEC2C2;
-  display: inline;
- }
-  
- span {
-  content: "\00B7";
-  size: 1000px;
- }
-  
- #restaurant-edit-btn {
-  padding: 0px 55px 0px 55px;
- }
- 
- .menuimg, .commentimg{
-   height: 20px;
-   width: 20px;
- }
+.name, .cuisine, .money, .city, .comment-section, .location, .menurec, .comment-section {
+padding: 10px 0px 15px 0px;
+}
 
- .card:hover {
-    background-color:#cde6ff;
- }
+#restaurant-add-btn {
+padding: 0px 55px 0px 62px;
+}
 
- .nav-link:hover {
-    color: #0d6efd;
- }
+.location-small {
+font-size: 20px;
+display:inline;
+}
+
+input.deletebtn {
+height: 48px;
+width: 67.64px;
+background-color: #fff;
+color: #0d6efd;;
+border: 1px solid transparent;
+border-color: #0d6efd;
+border-radius: .25rem;
+font-weight: 400;
+font-size: 1.1rem;
+display: block;
+font-weight: 420;
+line-height: 1.5;
+text-align: center;
+cursor: pointer;
+transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+input.deletebtn:hover {
+background-color: #0d6efd;
+color:white;
+}
+
+.edit-delete-div {
+display: flex;
+gap: 10px;
+margin-top: 60px;
+}
+
+#back2listbtn {
+margin-bottom: 60px;
+}
+
+.display-4 {
+font-family: 'DM Serif Display', serif;
+}
+
+.city-small {
+color: #2e2f2f;
+}
+
+.cuisine-grey {
+color: #BEC2C2;
+display: inline;
+}
+
+span {
+content: "\00B7";
+size: 1000px;
+}
+
+#restaurant-edit-btn {
+padding: 0px 55px 0px 55px;
+}
+
+.menuimg, .commentimg{
+height: 20px;
+width: 20px;
+}
+
+.card:hover {
+  background-color:#cde6ff;
+}
+
+.nav-link:hover {
+  color: #0d6efd;
+}
