@@ -2,9 +2,14 @@
   padding-bottom: 5%;
 }
 
-#aboutpage, #viewallpage, #rshowpage{
+#viewallpage, #rshowpage{
   height:100vh;
   overflow:auto;
+}
+#aboutpage{
+  height:100vh;
+  overflow-y:auto;
+  overflow-x: hidden;
 }
 
 .footerdiv{
@@ -95,6 +100,11 @@ font-size:small;
 
 .recmenutext, .commenttext{
   font-size: large;
+}
+
+.aboutimages{
+  max-width:100%;
+  height: auto;
 }
 
 #submit-form {
