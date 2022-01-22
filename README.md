@@ -31,4 +31,3 @@ On the details page:
 Main page picture: https://pixabay.com/photos/fruits-crepes-breakfast-plates-1869132/
 
 
--lg-5 offset-lg-4
