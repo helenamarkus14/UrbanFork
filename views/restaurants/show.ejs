@@ -50,9 +50,9 @@
                <h2 class="city-small"><%= restaurants.city %><div class="location-small"> <span>&#183;</span> <%= restaurants.location %> <span>&#183;</span> <i class="fa-solid fa-utensils"></i> <%= restaurants.cuisine %> <span>&#183;</span> <%= restaurants.money %> </div></h2>
               
                <hr class="my-4">
-               <h5><img class="menuimg" src="/images/forknife.png" /> <%= restaurants.recMenu %></h5>
+               <p class="recmenutext"><img class="menuimg" src="/images/forknife.png" /> <%= restaurants.recMenu %></p>
                 <br>
-               <h5 class="fw-light"><img class="commentimg" src="/images/comment.png" /> <%= restaurants.comment %></h5>
+               <p class="commenttext"><img class="commentimg" src="/images/comment.png" /> <%= restaurants.comment %></p>
                
                <% if (profile._id.equals(user && user._id)) { %>   
                

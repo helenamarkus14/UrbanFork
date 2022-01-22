@@ -93,6 +93,10 @@ font-size:small;
   background-color: transparent;
 }
 
+.recmenutext, .commenttext{
+  font-size: large;
+}
+
 #submit-form {
     display: grid;
     grid-gap: 10px;
