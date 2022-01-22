@@ -2,8 +2,9 @@
   padding-bottom: 5%;
 }
 
-#viewallpage, #aboutpage, #rshowpage{
+#aboutpage, #viewallpage, #rshowpage{
   height:100vh;
+  overflow:auto;
 }
 
 .footerdiv{
