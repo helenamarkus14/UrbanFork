@@ -1,7 +1,7 @@
 # UrbanFork
 An app to share restaurant recomendations to fellow foodies.
 
-
+Click here to launch: http://urbanfork.herokuapp.com/
 
 
 ### User Story
