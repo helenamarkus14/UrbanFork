@@ -1,8 +1,9 @@
 <%- include('../../partials/header') %>
 <body>
-
+    <!-- White page -->
     <div class="container-xxl px-md-5 bg-white shadow-lg" id="viewallpage">
         <main>
+            <!-- Header -->
             <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
                 <a href="/profiles" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
                     <img class ="logoimg" src="/images/uflogo2.png" />
@@ -33,13 +34,12 @@
                         <a href="/auth/google" class="text-dark text-muted text-decoration-none"><i class="bi bi-person-circle text-muted"></i>&nbsp; Hello, Sign In</a>
                     <% } %>
                 </div>
-              </header>
-              <!-- Header ends here -->
+            </header>
+             
 <div class="container">
     <div class="row">
-
+        <!-- Side Nav Bar -->
         <div class="col-4">
-
             <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" id="graynav">
                 <span class="fs-4">Cities</span>
                 <hr>  
@@ -89,12 +89,10 @@
                 </div>
             </div> 
         </div>
-
+        <!-- Restaurant List -->
         <div class="col-8">
-   
             <h2><%=profile.name%>'s <br>Favorite Restaurants in Boulder</h2>
             <br>
-
             <% restlist.forEach(function(r) { %>
                 <div class="card">
                     <div class="card-body">
@@ -104,8 +102,7 @@
                       <a href="/profiles/<%=profile._id%>/restaurants/<%=r._id%>" class="stretched-link" ></a>
                     </div>
                 </div>
-            <% }) %>
-            
+            <% }) %>     
         </div>
     </div>
 </div>
